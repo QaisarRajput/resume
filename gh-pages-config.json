@@ -1,0 +1,12 @@
+{
+  "branch": "gh-pages",
+  "directory": "build",
+  "message": "Deploying portfolio project to GitHub Pages",
+  "ignore": [
+    "node_modules",
+    "src",
+    "public",
+    "README.md",
+    ".gitignore"
+  ]
+}
