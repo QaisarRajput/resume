@@ -139,10 +139,10 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## 📸 Screenshots
 
 ### Light Mode
-![Light Mode Screenshot](https://via.placeholder.com/800x400?text=Light+Mode)
+![Light Mode Screenshot](public\light.png)
 
 ### Dark Mode
-![Dark Mode Screenshot](https://via.placeholder.com/800x400?text=Dark+Mode)
+![Dark Mode Screenshot](public\dark.png)
 
 ---
 
