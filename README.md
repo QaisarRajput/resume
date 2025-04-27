@@ -139,10 +139,10 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## 📸 Screenshots
 
 ### Light Mode
-![Light Mode Screenshot](public\light.png)
+![Light Mode Screenshot](https://github.com/QaisarRajput/resume/blob/00e36e6b1c235c888b400e955166051b6037b67b/public/light.png)
 
 ### Dark Mode
-![Dark Mode Screenshot](public\dark.png)
+![Dark Mode Screenshot](https://github.com/QaisarRajput/resume/blob/00e36e6b1c235c888b400e955166051b6037b67b/public/dark.png)
 
 ---
 
