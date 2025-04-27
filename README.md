@@ -1,5 +1,7 @@
 # 🌟 Professional Resume Web App
 
+> A modern, React-based resume builder that creates both an interactive web portfolio and a print-ready PDF resume. Features dark mode, responsive design, and easy customization. Built with React and deployed via GitHub Pages.
+
 ## 👨‍💻 About Me
 
 I am **Qaisar Tanvir**, a Senior Lead AI Architect passionate about artificial intelligence and software development. With over 10 years of experience in AI, ML, and deep learning, I've led numerous projects across various industries including Healthcare, Pharma, Finance, and Retail.
