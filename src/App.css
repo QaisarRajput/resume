@@ -47,8 +47,27 @@ body {
     margin: 0 auto;
 }
 
+.print {
+    position: flex;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 15%;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.print:hover {
+    opacity: 0.8;
+
+}
+
 .theme-toggle {
-    position: fixed;
+    position: flex;
     top: 20px;
     right: 20px;
     background: var(--bg-secondary);
@@ -76,6 +95,9 @@ body {
     }
 
     .theme-toggle {
+        display: none;
+    }
+    .print {
         display: none;
     }
 }

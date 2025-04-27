@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Resume from './components/Resume';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { FaSun, FaMoon, FaPrint } from 'react-icons/fa';
 import './App.css';
 
 const App = () => {
@@ -20,6 +20,10 @@ const App = () => {
         <div className="app">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
                 {theme === 'light' ? <FaMoon /> : <FaSun />}
+            </button>
+            <button className="print" title="Print the document in A4 with minimum margins"
+              onClick={() => window.print()} aria-label="Print Resume">
+                <FaPrint /> Print
             </button>
             <main className="main-content">
                 <Resume />
