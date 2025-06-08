@@ -8,7 +8,7 @@ const Resume = () => {
   return (
     <>
       <Helmet>
-        <title>Qaisar Tanvir - Senior Lead AI Architect</title>
+        <title>Qaisar Tanvir - AVP – AI/ML Architecture & MLOps Strategy | Leading MLOps Track | Cloud AI Strategist & Data Scientist</title>
         {/* SEO Meta Tags */}
         <meta name="description" content="With a robust 10+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy." />
         <meta name="keywords" content="Python, Deep Learning, Machine Learning, Statistical Modeling, NLP, Computer Vision, Time-Series Forecasting, Generative AI, LLMs, Prompt Engineering, MLOps, XAI, Feature Engineering, PySpark, Dataiku, AWS, EKS, Sagemaker, Bedrock, Docker, CI/CD, Github, Google Cloud AI, Keras, TensorFlow, PyTorch, MLflow, Kubeflow, LangChain, FastAPI, CUDA, Document AI, Arthur AI, Credo AI" />
@@ -37,7 +37,7 @@ const Resume = () => {
               </div>
               <div className="profile-info">
                 <h1 className="header-h1">Qaisar Tanvir</h1>
-                <h3>Senior Lead AI Architect</h3>
+                <h3>AVP – AI/ML Architecture & MLOps Strategy | Leading MLOps Track | Cloud AI Strategist & Data Scientist</h3>
                 <div className="contact-info">
                   <a href="mailto:qaisar.tanvir@outlook.com"><FaEnvelope /> qaisar.tanvir@outlook.com</a>
                   {/* <p><FaMapMarkerAlt /> Lahore, Pakistan</p> */}
@@ -55,8 +55,20 @@ const Resume = () => {
             <section className="experience">
               <h2>Experience</h2>
               <div className="job">
+                <h3>AVP – AI/ML Architecture & MLOps | Leading MLOps Track</h3>
+                <span className="contact-info"><a href="https://www.visionet.com/" target="_blank" rel="noopener noreferrer">Visionet Inc. </a> | 04/2025 - Present| <FaMapMarkerAlt /> (Remote) Cranbury, NJ, USA</span>
+                <ul>
+                <li>Lead AI/ML and MLOps architecture for scalable, cloud-based solutions</li>
+                <li>Drive strategy and execution as MLOps Track Lead across enterprise projects</li>
+                <li>Design and implement CI/CD pipelines, model governance, and monitoring frameworks</li>
+                <li>Act as Cloud AI Strategist, advising on ML platform design and automation</li>
+                <li>Lead a cross-functional team of 18 Data Scientists, 4 Data Engineers, and 2 Business Analysts across multiple AI/ML projects</li>
+                <li>Mentor data scientists and ML engineers to ensure delivery excellence</li>
+                </ul>
+              </div>
+              <div className="job">
                 <h3>Senior Lead AI Architect / Delivery Manager | Machine Learning and AI</h3>
-                <span className="contact-info"><a href="https://www.visionet.com/" target="_blank" rel="noopener noreferrer">Visionet Inc. </a> | 07/2022 - Present | <FaMapMarkerAlt /> (Remote) Cranbury, NJ, USA</span>
+                <span className="contact-info"><a href="https://www.visionet.com/" target="_blank" rel="noopener noreferrer">Visionet Inc. </a> | 07/2022 - 04/2025 | <FaMapMarkerAlt /> (Remote) Cranbury, NJ, USA</span>
                 <ul>
                   <li>As one of the senior members of AI/ML Practice, overseeing several on-going US-based projects as a delivery manager</li>
                   <li>Developing AI/ML CoE and MLOps CoE (Center of Excellence) for US-Based pharma giant, building ecosystem for ~500 Citizen Data Scientists</li>
