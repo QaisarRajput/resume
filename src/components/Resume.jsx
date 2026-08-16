@@ -4,27 +4,122 @@ import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaMedium, FaStar, FaTrophy, FaA
 import profileImage from '../assets/image.png';
 import { Helmet } from 'react-helmet';
 
+const certificationGroups = [
+  {
+    title: 'Agentic AI & LLM Engineering',
+    tag: 'Anthropic · Google Cloud',
+    items: [
+      { name: 'Claude Agentic AI — Subagents', issuer: 'Anthropic' },
+      { name: 'Claude Agentic AI — Agent Skills', issuer: 'Anthropic' },
+      { name: 'Claude with Model Context Protocol (MCP)', issuer: 'Anthropic' },
+      { name: 'Enterprise Agentic AI — Claude in Amazon Bedrock', issuer: 'Anthropic' },
+      { name: 'Enterprise Agentic AI — Building with the Claude API', issuer: 'Anthropic' },
+      { name: 'Agentic AI Capabilities & Limitations', issuer: 'Anthropic' },
+      { name: 'Claude AI Fluency — Framework & Foundations', issuer: 'Anthropic' },
+      { name: 'Claude Cowork (Advanced), Platform 101, Code 101 & Claude 101', issuer: 'Anthropic' },
+      { name: 'Engineer AI Agents with Agent Development Kit (ADK)', issuer: 'Google Cloud' },
+      { name: 'Design & Deploy Multi-Agent Architectures', issuer: 'Google Cloud' },
+    ],
+  },
+  {
+    title: 'AWS Cloud & AI',
+    tag: 'Amazon Web Services',
+    items: [
+      { name: 'Generative AI Practitioner (Cloud Quest)', issuer: 'AWS' },
+      { name: 'AI-Driven Development Lifecycle Foundations', issuer: 'AWS' },
+      { name: 'Skills Center AI Practitioner', issuer: 'AWS' },
+      { name: 'Enterprise AI — Well-Architected Proficient', issuer: 'AWS' },
+      { name: 'Knowledge Certification — Compute', issuer: 'AWS' },
+      { name: 'Cloud Quest — Cloud Practitioner', issuer: 'AWS' },
+    ],
+  },
+  {
+    title: 'Generative & Responsible AI',
+    tag: 'Microsoft · LinkedIn · IBM · HP',
+    items: [
+      { name: 'Career Essentials in Generative AI', issuer: 'Microsoft × LinkedIn' },
+      { name: 'Ethics in the Age of Generative AI', issuer: 'LinkedIn' },
+      { name: 'Ethical Considerations for Generative AI', issuer: 'IBM' },
+      { name: 'AI Literacy', issuer: 'IBM' },
+      { name: 'Building Trustworthy AI Enterprise Solutions', issuer: 'IBM' },
+      { name: 'Critical Thinking in the AI Era', issuer: 'HP' },
+    ],
+  },
+  {
+    title: 'Dataiku Certified',
+    tag: 'Dataiku',
+    items: [
+      { name: 'MLOps Practitioner · Generative AI Practitioner · ML Practitioner', issuer: 'Dataiku' },
+      { name: 'Advanced Designer · Core Designer', issuer: 'Dataiku' },
+    ],
+  },
+  {
+    title: 'Data Science, ML & Big Data',
+    tag: 'IBM · Google · UW · JHU · UC San Diego',
+    items: [
+      { name: 'Enterprise Data Science in Practice', issuer: 'IBM' },
+      { name: 'Managing Machine Learning Projects with Google Cloud', issuer: 'Google' },
+      { name: 'Machine Learning: A Case Study Approach', issuer: 'University of Washington' },
+      { name: 'Machine Learning A-Z (Python & R)', issuer: 'Udemy' },
+      { name: "The Data Scientist's Toolbox", issuer: 'Johns Hopkins University' },
+      { name: 'Hadoop Platform & Application Framework', issuer: 'UC San Diego' },
+      { name: 'Introduction to Big Data', issuer: 'UC San Diego' },
+    ],
+  },
+  {
+    title: 'Leadership & Web Engineering',
+    tag: 'HP',
+    items: [
+      { name: 'Effective Leadership', issuer: 'HP' },
+      { name: 'Sales Forecasting', issuer: 'HP' }
+    ],
+  },
+];
+
+const skillGroups = [
+  {
+    label: 'Generative & Agentic AI',
+    skills: ['Generative AI (GenAI)', 'Large Language Models (LLMs)', 'Agentic AI', 'Prompt Engineering', 'RAG / GraphRAG', 'LangChain', 'LangGraph', 'MCP', 'Anthropic Claude'],
+  },
+  {
+    label: 'Machine Learning & Deep Learning',
+    skills: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision', 'Time-Series Forecasting', 'Statistical Modeling', 'Feature Engineering'],
+  },
+  {
+    label: 'MLOps & Responsible AI',
+    skills: ['MLOps', 'CI/CD', 'MLflow', 'Kubeflow', 'Docker', 'Responsible AI (XAI)', 'Arthur AI', 'Credo AI'],
+  },
+  {
+    label: 'Cloud, Data & Platforms',
+    skills: ['AWS Bedrock', 'AWS SageMaker', 'AWS EKS', 'Azure', 'Google Cloud AI', 'Dataiku', 'Databricks', 'Snowflake'],
+  },
+  {
+    label: 'Languages & Frameworks',
+    skills: ['Python', 'PySpark (Apache Spark)', 'TensorFlow', 'PyTorch', 'Keras', 'FastAPI', 'CUDA', 'Document AI', 'GitHub Enterprise'],
+  },
+];
+
 const Resume = () => {
   return (
     <>
       <Helmet>
-        <title>Qaisar Tanvir - AVP – AI/ML Architecture & MLOps Strategy | Leading MLOps Track | Cloud AI Strategist & Data Scientist</title>
+        <title>Qaisar Tanvir - AVP – AI/ML Architecture & Strategy | Leading MLOps Track | Agentic AI & Cloud AI Leader | AWS, Anthropic, Dataiku Certified</title>
         {/* SEO Meta Tags */}
-        <meta name="description" content="With a robust 10+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy." />
-        <meta name="keywords" content="Python, Deep Learning, Machine Learning, Statistical Modeling, NLP, Computer Vision, Time-Series Forecasting, Generative AI, LLMs, Prompt Engineering, MLOps, XAI, Feature Engineering, PySpark, Dataiku, AWS, EKS, Sagemaker, Bedrock, Docker, CI/CD, Github, Google Cloud AI, Keras, TensorFlow, PyTorch, MLflow, Kubeflow, LangChain, FastAPI, CUDA, Document AI, Arthur AI, Credo AI" />
+        <meta name="description" content="With a robust 12+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, Agentic AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy." />
+        <meta name="keywords" content="Python, Deep Learning, Machine Learning, Statistical Modeling, NLP, Computer Vision, Time-Series Forecasting, Generative AI, Agentic AI, LLMs, Prompt Engineering, MLOps, XAI, Feature Engineering, PySpark, Dataiku, AWS, EKS, Sagemaker, Bedrock, Anthropic Claude, LangGraph, LangChain, MCP, GraphRAG, Docker, CI/CD, Github, Google Cloud AI, Keras, TensorFlow, PyTorch, MLflow, Kubeflow, FastAPI, CUDA, Document AI, Arthur AI, Credo AI" />
         <meta name="author" content="Qaisar Tanvir" />
 
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="Qaisar Tanvir - Senior Lead AI Architect" />
-        <meta property="og:description" content="With a robust 10+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy." />
+        <meta property="og:title" content="Qaisar Tanvir - AVP AI/ML Architecture & Strategy | Agentic AI & Cloud AI Leader" />
+        <meta property="og:description" content="With a robust 12+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, Agentic AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy." />
         <meta property="og:image" content={profileImage} />
         <meta property="og:url" content="https://QaisarRajput.github.io/resume" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Qaisar Tanvir - Senior Lead AI Architect" />
-        <meta name="twitter:description" content="With a robust 10+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy." />
+        <meta name="twitter:title" content="Qaisar Tanvir - AVP AI/ML Architecture & Strategy | Agentic AI & Cloud AI Leader" />
+        <meta name="twitter:description" content="With a robust 12+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, Agentic AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy." />
         <meta name="twitter:image" content={profileImage} />
       </Helmet>
       <div className="resume-container">
@@ -37,7 +132,7 @@ const Resume = () => {
               </div>
               <div className="profile-info">
                 <h1 className="header-h1">Qaisar Tanvir</h1>
-                <h3>AVP – AI/ML Architecture & MLOps Strategy | Leading MLOps Track | Cloud AI Strategist & Data Scientist</h3>
+                <h3>AVP – AI/ML Architecture &amp; Strategy | Leading MLOps Track | Agentic AI &amp; Cloud AI Leader | AWS, Anthropic, Dataiku Certified</h3>
                 <div className="contact-info">
                   <a href="mailto:qaisar.tanvir@outlook.com"><FaEnvelope /> qaisar.tanvir@outlook.com</a>
                   {/* <p><FaMapMarkerAlt /> Lahore, Pakistan</p> */}
@@ -56,7 +151,11 @@ const Resume = () => {
               <h2>Experience</h2>
               <div className="job">
                 <h3>AVP – AI/ML Architecture & MLOps | Leading MLOps Track</h3>
-                <span className="contact-info"><a href="https://www.visionet.com/" target="_blank" rel="noopener noreferrer">Visionet Inc. </a> | 04/2025 - Present| <FaMapMarkerAlt /> (Remote) Cranbury, NJ, USA</span>
+                <span className="job-meta">
+                  <a className="job-company" href="https://www.visionet.com/" target="_blank" rel="noopener noreferrer">Visionet Inc.</a>
+                  <span className="job-date">04/2025 – Present</span>
+                  <span className="job-loc"><FaMapMarkerAlt /> Remote · Cranbury, NJ, USA</span>
+                </span>
                 <ul>
                 <li>Lead AI/ML and MLOps architecture for scalable, cloud-based solutions</li>
                 <li>Drive strategy and execution as MLOps Track Lead across enterprise projects</li>
@@ -68,7 +167,11 @@ const Resume = () => {
               </div>
               <div className="job">
                 <h3>Senior Lead AI Architect / Delivery Manager | Machine Learning and AI</h3>
-                <span className="contact-info"><a href="https://www.visionet.com/" target="_blank" rel="noopener noreferrer">Visionet Inc. </a> | 07/2022 - 04/2025 | <FaMapMarkerAlt /> (Remote) Cranbury, NJ, USA</span>
+                <span className="job-meta">
+                  <a className="job-company" href="https://www.visionet.com/" target="_blank" rel="noopener noreferrer">Visionet Inc.</a>
+                  <span className="job-date">07/2022 – 04/2025</span>
+                  <span className="job-loc"><FaMapMarkerAlt /> Remote · Cranbury, NJ, USA</span>
+                </span>
                 <ul>
                   <li>As one of the senior members of AI/ML Practice, overseeing several on-going US-based projects as a delivery manager</li>
                   <li>Developing AI/ML CoE and MLOps CoE (Center of Excellence) for US-Based pharma giant, building ecosystem for ~500 Citizen Data Scientists</li>
@@ -81,7 +184,11 @@ const Resume = () => {
 
               <div className="job">
                 <h3>Lead Data Scientist / Project Manager | Machine Learning and AI</h3>
-                <span className="contact-info"><a href="https://www.systemsltd.com/" target="_blank" rel="noopener noreferrer">Systems Limited </a>| 01/2018 - 07/2022 | <FaMapMarkerAlt /> Lahore, Pakistan</span>
+                <span className="job-meta">
+                  <a className="job-company" href="https://www.systemsltd.com/" target="_blank" rel="noopener noreferrer">Systems Limited</a>
+                  <span className="job-date">01/2018 – 07/2022</span>
+                  <span className="job-loc"><FaMapMarkerAlt /> Lahore, Pakistan</span>
+                </span>
                 <ul>
                   <li>Diversified AI/ML Use Cases Design and Delivery: Expanded industries (Manufacturing, BFSI, Insurance, Underwriting, Cosmetics)</li>
                   <li>Global Expansion: Extended AI/ML practice to Middle-east and Europe</li>
@@ -93,7 +200,11 @@ const Resume = () => {
 
               <div className="job">
                 <h3>Principal Data Scientist / Team Lead | Machine Learning and AI</h3>
-                <span className="contact-info"><a href="https://www.systemsltd.com/" target="_blank" rel="noopener noreferrer"> Systems Limited </a>| 01/2016 - 12/2017 | <FaMapMarkerAlt /> Lahore, Pakistan</span>
+                <span className="job-meta">
+                  <a className="job-company" href="https://www.systemsltd.com/" target="_blank" rel="noopener noreferrer">Systems Limited</a>
+                  <span className="job-date">01/2016 – 12/2017</span>
+                  <span className="job-loc"><FaMapMarkerAlt /> Lahore, Pakistan</span>
+                </span>
                 <ul>
                   <li>Served as a client-facing AI/ML lead for several US-based clients, winning projects with a robust AI/ML portfolio</li>
                   <li>Led projects as technical lead, working with client executives and overseeing team of 12x Data Scientists, 3x Data Engineers</li>
@@ -104,7 +215,11 @@ const Resume = () => {
 
               <div className="job">
                 <h3>Senior Data Scientist | Machine Learning and AI</h3>
-                <span className="contact-info"><a href="https://www.systemsltd.com/" target="_blank" rel="noopener noreferrer">Systems Limited </a>| 08/2015 - 01/2016 | <FaMapMarkerAlt /> Lahore, Pakistan</span>
+                <span className="job-meta">
+                  <a className="job-company" href="https://www.systemsltd.com/" target="_blank" rel="noopener noreferrer">Systems Limited</a>
+                  <span className="job-date">08/2015 – 01/2016</span>
+                  <span className="job-loc"><FaMapMarkerAlt /> Lahore, Pakistan</span>
+                </span>
                 <ul>
                   <li>Pioneering member in establishing AI/ML Practice, adopting startup mindset for ideation and product enhancement</li>
                   <li>Led team of 4 Data Scientists in ideating and designing AI/ML use cases for diverse industries</li>
@@ -116,7 +231,11 @@ const Resume = () => {
 
               <div className="job">
                 <h3>Ai Engineer/Data Scientist</h3>
-                <span className="contact-info"><a href="https://tenx.ai/" target="_blank" rel="noopener noreferrer">TenX </a> | 06/2014 - 12/2014 | <FaMapMarkerAlt /> Lahore, Pakistan</span>
+                <span className="job-meta">
+                  <a className="job-company" href="https://tenx.ai/" target="_blank" rel="noopener noreferrer">TenX</a>
+                  <span className="job-date">06/2014 – 12/2014</span>
+                  <span className="job-loc"><FaMapMarkerAlt /> Lahore, Pakistan</span>
+                </span>
                 <ul>
                   <li>Enhancing a Data Insights tool to improve data-driven insights</li>
                   <li>Developing AI/ML algorithms to enhance Customer 360 views</li>
@@ -129,6 +248,51 @@ const Resume = () => {
             <section className="projects">
               <h2>Projects</h2>
               <div className="project-list">
+                <div className="project-item">
+                  <h3>Agentic SDLC Platform</h3>
+                  <p className="tech-stack">
+                    {['Anthropic Claude (Tool Use)', 'AWS Bedrock', 'LangGraph', 'MCP', 'GitHub Actions', 'MLOps'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Built a multi-agent SDLC platform (spec -&gt; code -&gt; test -&gt; PR review) on Anthropic tool-use, orchestrated with LangGraph</li>
+                    <li>Added optimal model selection/routing to balance cost and quality per task</li>
+                    <li>Stood up an MCP server integrating Jira, Confluence, and GitHub as governed tools</li>
+                    <li>Onboarded delivery teams onto the platform; cut cycle time ~18% and escaped defects ~10%</li>
+                  </ul>
+                </div>
+
+                <div className="project-item">
+                  <h3>Enterprise GenAI Knowledge Assistant for Pharma R&amp;D</h3>
+                  <p className="tech-stack">
+                    {['Anthropic Claude', 'AWS Bedrock', 'LangGraph', 'RAG', 'Private AI', 'Credo AI'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Built a governed agentic-RAG assistant over regulatory, clinical, and SOP corpora with citation-grounded answers</li>
+                    <li>Enforced PHI/PII redaction and guardrails via Private AI and Credo AI so responses trace to approved documents</li>
+                    <li>Tuned hybrid retrieval (dense + BM25 + reranker), cutting hallucination flags to ~22%</li>
+                    <li>Rolled out to ~450 users with quarter-over-quarter adoption gains of 6%, 15%, and 40%</li>
+                  </ul>
+                </div>
+
+                <div className="project-item">
+                  <h3>PEO Payroll &amp; HR Knowledge Graph for GraphRAG</h3>
+                  <p className="tech-stack">
+                    {['Knowledge Graph', 'Neo4j', 'GraphRAG', 'LLM', 'LangGraph', 'Python'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Engineered a knowledge graph over payroll, benefits, and HR policy for a PEO serving thousands of SMB clients</li>
+                    <li>Modeled entities and relationships (employee, worksite, benefit plan, jurisdiction, pay rule) for multi-hop reasoning</li>
+                    <li>Layered GraphRAG so the assistant answers compliance and payroll questions by traversing the graph, not just embeddings</li>
+                    <li>Cut agent handle time and mis-answers by grounding responses in explicit, auditable relationships</li>
+                  </ul>
+                </div>
+
                 <div className="project-item">
                   <h3>RAG-as-a-Service - Visual Gen AI Platform</h3>
                   <p className="tech-stack">
@@ -148,49 +312,108 @@ const Resume = () => {
                 </div>
 
                 <div className="project-item">
-                  <h3>Multivariate Category Growth Projections for a US-Based Fortune 500 Cosmetic Brand</h3>
+                  <h3>Agentic Data Engineering Copilot on Open-Source Stack</h3>
                   <p className="tech-stack">
-                    {['Azure Databricks', 'PySpark', 'Time Series Forecasting', 'PyTorch'].map((tech, index) => (
+                    {['LangGraph', 'LangChain', 'dbt', 'Airflow', 'Snowflake', 'MCP', 'Open Source'].map((tech, index) => (
                       <span key={index} className="tech-tag">{tech}</span>
                     ))}
                   </p>
                   <ul>
-                    <li>Spearheaded the transition from a linear to a multivariate projection strategy, achieving a substantial 63% reduction MAPE</li>
-                    <li>Implemented an Custom AutoML Multivariate AR approach utilizing PySpark on Databricks, involving the frequent retraining of over 32,000 models each quarter for different data sources and grains</li>
-                    <li>Tackled challenges arising from diverse data sources (e.g., sales, Google Trends, Reviews, GDP and coped with limited historical data through advanced back-forecasting techniques</li>
-                    <li>Engineered COVID Recovery Forecasting models to interpret the unique behaviors in sales signals during the pandemic, specifically addressing variations between Brick-and-Mortar and E-commerce channels</li>
-                    <li>Executed a sophisticated forecasting scope, encompassing major and sub-categories, inclusive of competitors' sales data, navigating intricate technicalities during the unpredictable period of the COVID pandemic</li>
+                    <li>Built an agentic copilot turning plain-English requests into validated dbt models, tests, and Airflow DAGs</li>
+                    <li>Agents self-check via dbt tests and lineage validation before opening a PR, keeping humans on merge control</li>
+                    <li>Reduced boilerplate pipeline work an estimated 10-25% (exact figure never shared by the client team)</li>
+                    <li>Added prompt caching and usage guards that held token spend flat as adoption grew across two teams</li>
                   </ul>
                 </div>
 
                 <div className="project-item">
-                  <h3>Deep Learning Cloud Pipeline for News Media Meta-data Generation</h3>
+                  <h3>Medallion Lakehouse for a Large Insurer</h3>
                   <p className="tech-stack">
-                    {['Deep Learning', 'GCP', 'TensorFlow', 'Keras', 'NLP'].map((tech, index) => (
+                    {['Snowflake', 'dbt', 'PySpark', 'Tableau', 'Power Platform', 'MLOps'].map((tech, index) => (
                       <span key={index} className="tech-tag">{tech}</span>
                     ))}
                   </p>
                   <ul>
-                    <li>Extended SaaS APIs for US News Media: Modified Model APIs to leverage article images for metadata enrichment, not just text</li>
-                    <li>Developed 8֡ image classification and object detection models for generating diverse tags (e.g., clean background, nature, sports)</li>
-                    <li>Solutioning on GCP, integrating Google Functions, ML Engine, and Vision API for comprehensive model deployment and execution to reduce through-put 30x times</li>
+                    <li>Designed a Bronze/Silver/Gold medallion lakehouse on Snowflake, consolidating 40+ policy, claims, and billing sources into one governed truth</li>
+                    <li>Enforced column-level PII masking and lineage for ~300 analysts under NAIC compliance</li>
+                    <li>Implemented micro-batched Gold-layer refresh driven by consumption-layer needs across Tableau and Power Platform</li>
+                    <li>Delivered curated actuarial and underwriting marts that shaved ~3 weeks off quarterly reserving</li>
                   </ul>
                 </div>
 
                 <div className="project-item">
-                  <h3>Deep Video Analytics for Retail Stores</h3>
+                  <h3>AI Advisory &amp; Pre-Sales - Data Maturity and Innovation Roadmaps</h3>
                   <p className="tech-stack">
-                    {['Computer Vision', 'MLOps', 'Deep Learning', 'TensorFlow', 'PyTorch', 'Perspective Mapping'].map((tech, index) => (
+                    {['Solution Architecture', 'Applied ML', 'Forecasting', 'GenAI Strategy', 'Data Maturity Assessment'].map((tech, index) => (
                       <span key={index} className="tech-tag">{tech}</span>
                     ))}
                   </p>
                   <ul>
-                    <li>Employed advanced computer vision and deep learning techniques, including YOLO for object detection and Deep SORT for object tracking</li>
-                    <li>The models were fine-tuned and transfer-learnt to identifying people and shopping bags (new class created by augmenting data), enabling diverse use-cases:</li>
-                    <li>Optimizing floor plans by tracking customer flows</li>
-                    <li>Identifying marketing opportunities in high-traffic areas based on time and holidays</li>
-                    <li>Managing customer queues and routing service reps</li>
-                    <li>Analyzing customer-product interactions for shelf configuration optimization in retail stores</li>
+                    <li>Led AI client-fronting consulting for 5 years, overseeing delivery of $500K-$1M/yr services engagements</li>
+                    <li>Advised client CxOs on gaps and roadmaps spanning classical ML, forecasting, and GenAI use cases</li>
+                    <li>Built a reusable data-maturity framework (data, platform, talent, governance) benchmarking 12+ accounts</li>
+                    <li>Grew qualified pipeline ~$14M and lifted win rate 31% -&gt; 48% YoY across net-new and expansion logos</li>
+                  </ul>
+                </div>
+
+                <div className="project-item">
+                  <h3>Churn &amp; Next-Best-Offer Engine for a Telecom Operator</h3>
+                  <p className="tech-stack">
+                    {['Databricks', 'PySpark', 'Uplift Modeling', 'Time-Series Forecasting', 'MLOps'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Fused CDR, network telemetry, billing, and care tickets at subscriber grain to predict churn risk</li>
+                    <li>Shifted from propensity to uplift (causal) modeling for retention offers, lifting incremental retention ~15%</li>
+                    <li>Built a next-best-offer ranker that cut wasted spend on already-loyal customers while protecting margin</li>
+                    <li>Automated retraining and drift checks to hold accuracy through seasonal and promo-driven shifts</li>
+                  </ul>
+                </div>
+
+                <div className="project-item">
+                  <h3>Cross-Sell Recommendation Platform for a Retail Bank</h3>
+                  <p className="tech-stack">
+                    {['Databricks', 'PySpark', 'Recommenders', 'Feature Store', 'MLOps'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Delivered a real-time cross-sell/upsell recommender across digital and branch channels</li>
+                    <li>Combined collaborative filtering with sequence models on transaction history to rank next-best products</li>
+                    <li>Served features from a shared store to kill training/serving skew and speed new-feature rollout</li>
+                    <li>Lifted product-per-customer and offer conversion in tested segments via always-on A/B evaluation</li>
+                  </ul>
+                </div>
+
+                <div className="project-item">
+                  <h3>Underwriting Automation &amp; Risk Scoring for a Commercial Insurer</h3>
+                  <p className="tech-stack">
+                    {['Document AI', 'LLM', 'AWS SageMaker', 'OCR', 'LightGBM', 'Jenkins', 'Human-in-the-Loop'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Automated intake-to-decision by extracting risk attributes from ACORD forms, loss runs, and broker submissions</li>
+                    <li>Straight-through-processed ~55% of low-complexity submissions with a review path for edge cases</li>
+                    <li>Trained calibrated risk-scoring models that improved loss-ratio segmentation and flagged mispriced risk early</li>
+                    <li>Cut manual data-entry effort ~35% and dropped quote turnaround from days to hours</li>
+                  </ul>
+                </div>
+
+                <div className="project-item">
+                  <h3>Multivariate Category Growth Projections &amp; Inventory Optimization for a US-Based Fortune 500 Cosmetic Brand</h3>
+                  <p className="tech-stack">
+                    {['Azure Databricks', 'PySpark', 'Time Series Forecasting', 'FBProphet', 'PyTorch'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Drove a linear-to-multivariate projection shift, cutting MAPE ~63% across major/sub-categories and competitor sales</li>
+                    <li>Built a Custom AutoML Multivariate AR pipeline on PySpark/Databricks, retraining 32,000+ models quarterly across data sources and grains</li>
+                    <li>Grid-searched candidates with FBProphet emerging best alongside the AR ensemble; used back-forecasting to offset limited history</li>
+                    <li>Fused diverse signals (sales, Google Trends, reviews, GDP) and engineered COVID-recovery models for Brick-and-Mortar vs. E-commerce</li>
+                    <li>Extended forecasts into inventory optimization via a service-level-constrained optimizer to rebalance DC stock and free working capital</li>
                   </ul>
                 </div>
 
@@ -207,6 +430,35 @@ const Resume = () => {
                     <li>Attention-Based Field Extractor: Implements attention-based deep field extractor to extract values from various document types</li>
                   </ul>
                 </div>
+
+                <div className="project-item">
+                  <h3>Deep Video Analytics for Retail Stores</h3>
+                  <p className="tech-stack">
+                    {['Computer Vision', 'MLOps', 'Deep Learning', 'TensorFlow', 'PyTorch', 'Perspective Mapping'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Built a CV/DL pipeline with YOLO detection and Deep SORT tracking, fine-tuned to identify people and shopping bags (augmented new class)</li>
+                    <li>Optimized floor plans and shelf configuration by tracking customer flows and product interactions</li>
+                    <li>Surfaced marketing opportunities in high-traffic zones by time and holidays</li>
+                    <li>Managed customer queues and routed service reps from live footfall signals</li>
+                  </ul>
+                </div>
+
+                <div className="project-item">
+                  <h3>Deep Learning Cloud Pipeline for News Media Meta-data Generation</h3>
+                  <p className="tech-stack">
+                    {['Deep Learning', 'GCP', 'TensorFlow', 'Keras', 'NLP'].map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </p>
+                  <ul>
+                    <li>Extended SaaS APIs for US News Media: Modified Model APIs to leverage article images for metadata enrichment, not just text</li>
+                    <li>Developed 8 image classification and object detection models for generating diverse tags (e.g., clean background, nature, sports)</li>
+                    <li>Solutioning on GCP, integrating Google Functions, ML Engine, and Vision API for comprehensive model deployment and execution to reduce through-put 30x times</li>
+                  </ul>
+                </div>
               </div>
             </section>
           </div>
@@ -215,7 +467,7 @@ const Resume = () => {
             <section className="summary">
               <h2>Summary</h2>
               <p>
-              With a robust 10+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, and MLOPS. My commitment lies in seamlessly intertwining technology with overarching business strategy.
+              With a robust 12+ years long professional journey, I am fervently dedicated to propelling businesses into the future through the mastery of AI, ML, NLP, Deep Learning, Gen-AI, Agentic AI, and MLOps. My commitment lies in seamlessly intertwining technology with overarching business strategy.
               </p>
             </section>
 
@@ -249,37 +501,24 @@ const Resume = () => {
             </section>
             <section className="certifications">
               <h2>Certifications</h2>
-              <div className="certification-list">
-                <div className="certification-item">
-                  <p>Building Trustworthy AI Enterprise Solutions | <strong className="bold-color">IBM</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Enterprise Data Science in Practice | <strong className="bold-color">IBM</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Effective Leadership | <strong className="bold-color">HP</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Sales Forecasting | <strong className="bold-color">HP</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Dataiku Core Designer | <strong className="bold-color">Dataiku</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Managing Machine Learning Projects with Google Cloud | <strong className="bold-color">Google</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>The Data Scientist's Toolbox | <strong className="bold-color">The Johns Hopkins University</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Hadoop Platform and Application Framework | <strong className="bold-color">UC San Diego</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Machine Learning: A Case Study Approach | <strong className="bold-color">University of Washington</strong></p>
-                </div>
-                <div className="certification-item">
-                  <p>Introduction to Big Data | <strong className="bold-color">UC San Diego</strong></p>
-                </div>
+              <div className="cert-groups">
+                {certificationGroups.map((group, gIndex) => (
+                  <div className="cert-group" key={gIndex}>
+                    <div className="cert-group-head">
+                      <h4 className="cert-group-title">{group.title}</h4>
+                      <span className="cert-count">{group.items.length}</span>
+                    </div>
+                    <span className="cert-group-tag">{group.tag}</span>
+                    <ul className="cert-items">
+                      {group.items.map((cert, cIndex) => (
+                        <li key={cIndex}>
+                          <span className="cert-name">{cert.name}</span>
+                          <span className="cert-issuer"> — {cert.issuer}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </section>
 
@@ -298,8 +537,12 @@ const Resume = () => {
             <section className="additional-experience">
               <h2>Additional Experience</h2>
               <div className="job">
-                <h4>Instructor | Advanced Analytics and Artificial Intelligence Certification</h4>
-                <span className="contact-info">Lahore University of Management Sciences (LUMS) | 09/2018 - 12/2018 | <FaMapMarkerAlt /> Lahore, Pakistan</span>
+                <h4>Instructor | AI Certification</h4>
+                <span className="job-meta">
+                  <span className="job-company">Lahore University of Management Sciences (LUMS)</span>
+                  <span className="job-date">09/2018 – 12/2018</span>
+                  <span className="job-loc"><FaMapMarkerAlt /> Lahore, Pakistan</span>
+                </span>
                 <ul>
                   <li>Instructed a diverse group of AI enthusiasts from various industries, academic backgrounds, and professions</li>
                   <li>Taught research students pursuing their Master's in Data Science at LUMS, as well as software industry professionals</li>
@@ -310,47 +553,18 @@ const Resume = () => {
 
             <section className="skills">
               <h2>Skills</h2>
-              <p className="tech-stack">
-                {[
-  'Python',
-  'Deep Learning',
-  'Machine Learning',
-  'Statistical Modeling',
-  'Natural Language Processing (NLP)',
-  'Computer Vision',
-  'Time-Series Forecasting',
-  'Generative AI (GenAI)',
-  'Large Language Models (LLMs)',
-  'Prompt Engineering',
-  'MLOps',
-  'Responsible AI (XAI)',
-  'Feature Engineering',
-  'PySpark (Apache Spark)',
-  'Dataiku',
-  'AWS Cloud platform',
-  'AWS Elastic Kubernettes Service (EKS)',
-  'AWS Sagemaker',
-  'AWS Bedrock',
-  'Docker',
-  'CI/CD',
-  'Github Entreprise',
-  'Google Cloud AI Platform',
-  'Keras',
-  'TensorFlow',
-  'PyTorch',
-  'MLflow',
-  'Kubeflow',
-  'LangChain',
-  'FastAPI',
-  'CUDA',
-  'Document AI',
-  'Arthur AI',
-  'Credo AI'
-].map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
+              <div className="skill-groups">
+                {skillGroups.map((group, gIndex) => (
+                  <div className="skill-group" key={gIndex}>
+                    <span className="skill-group-label">{group.label}</span>
+                    <p className="tech-stack">
+                      {group.skills.map((tech, index) => (
+                        <span key={index} className="tech-tag">{tech}</span>
+                      ))}
+                    </p>
+                  </div>
                 ))}
-
-              </p>
+              </div>
             </section>
 
             <section className="languages">

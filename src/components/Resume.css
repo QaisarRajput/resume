@@ -167,7 +167,7 @@ body {
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
@@ -175,7 +175,7 @@ h2 {
   color: var(--heading-color);
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 h3 {
@@ -187,7 +187,7 @@ h3 {
 h4 {
   font-size: 0.9rem;
   color: var(--title-color);
-  margin-bottom: -0.8rem;
+  margin-bottom: 0.15rem;
 }
 
 .bold-color {
@@ -198,7 +198,62 @@ h4 {
   display: block;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+}
+
+/* Experience subtitle: company · dates · location */
+.job .job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0.55rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0.15rem 0 0.5rem;
+  line-height: 1.4;
+}
+
+.job-company,
+.job-date,
+.job-loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.job-company {
+  font-weight: 700;
+  color: var(--title-color);
+  text-decoration: none;
+}
+
+.job-company:hover {
+  text-decoration: underline;
+}
+
+.job-date,
+.job-loc {
+  white-space: nowrap;
+}
+
+.job-date::before,
+.job-loc::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+  margin-right: 0.55rem;
+}
+
+.job-loc svg {
+  font-size: 0.78em;
+  opacity: 0.85;
+}
+
+.additional-experience .job h4 {
+  margin-bottom: 0.2rem;
 }
 
 ul {
@@ -231,20 +286,76 @@ ul li {
   padding-left: 1.1rem;
 }
 
-.certifications li {
-  margin-bottom: 0.0rem;
-  line-height: 0.2;
+/* Grouped certifications */
+.cert-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
-.certifications .cert-name {
+.cert-group {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cert-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.15rem;
+}
+
+.cert-group-title {
+  font-size: 0.95rem;
   font-weight: 700;
-  display: inline-block;
+  color: var(--title-color);
+  margin: 0;
 }
 
-.certifications .cert-date {
+.cert-count {
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--tag-color, #fff);
+  background: var(--title-color);
+  border-radius: 10px;
+  padding: 1px 8px;
+  line-height: 1.4;
+}
+
+.cert-group-tag {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-left: 0.5rem;
+  margin: 0.15rem 0 0.2rem;
+}
+
+.cert-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cert-items li {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 0.1rem 0;
+  line-height: 1.3;
+  font-size: 0.82rem;
+}
+
+.cert-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cert-issuer {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
 }
 
 a:hover {
@@ -253,6 +364,27 @@ a:hover {
 
 .skills p, .languages p {
   line-height: 1.6;
+}
+
+/* Grouped skills */
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.skill-group-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.skill-group .tech-stack {
+  margin: 0;
 }
 
 .fa-icon {
@@ -324,22 +456,6 @@ a:hover {
   margin-inline-end: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .tech-tag {
-    background: var(--tag-bg, #f0f0f0);
-    padding: 3px 10px;
-    border-radius: 12px;
-    display: inline-block;
-    font-size: 0.85em;
-    color: var(--tag-color, #191919);
-    border: 1px solid var(--tag-border, #ddd);
-    transition: all 0.2s ease-in-out;
-    cursor: default;
-    white-space: nowrap;
-    margin-bottom: 4px;
-  }
-}
-
 @media print {
   /* Ensure the resume container appears as on the web */
   .resume-container {
@@ -349,88 +465,96 @@ a:hover {
     padding: 0;
     width: 100%;
     max-width: none;
+    background: white;
   }
   body {
     background: white;
     margin: 0;
-    color: black; 
+    color: black;
   }
 
   ul li {
-    margin: 0.1rem 0;
-    line-height: 0.9;
-    font-size: 12px;
+    margin: 0.08rem 0;
+    line-height: 1.15;
+    font-size: 11.5px;
     font-weight: lighter;
     color: black;
   }
 
-
-  /* Prevent unwanted page breaks inside main sections */
-  .resume-container, 
-  .experience, 
-  .projects, 
-  .summary, 
-  .strengths, 
-  .certifications, 
-  .publications, 
-  .education, 
-  .additional-experience, 
-  .skills, 
-  .languages {
-    page-break-inside: avoid;
-  }
+  /* Let large sections and columns flow naturally across pages */
   .resume-content {
     flex-direction: row !important;
+    display: flex;
   }
   .left-column {
-    flex: 0 0 60% !important;
+    flex: 0 0 62% !important;
   }
   .right-column {
-    flex: 0 0 40% !important;
+    flex: 0 0 38% !important;
+  }
+  section {
+    page-break-inside: auto;
+    break-inside: auto;
   }
 
-  /* New print mode adjustments */
+  /* Keep atomic items intact so nothing is cut mid-block */
+  .job,
+  .project-item,
+  .cert-group,
+  .cert-items li,
+  .skill-group,
+  .education-item,
+  .publications li,
+  .certification-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep a heading with the content that follows it */
+  h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+    color: black;
+  }
+
   h2 {
-    font-size: 1rem; /* smaller heading */
-    margin-bottom: 0.5rem;
-    padding: 0.2rem 0;
-    padding-bottom: 0.1rem;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    padding: 0.15rem 0;
   }
-
   h3 {
     font-size: 0.9rem;
-    margin-bottom: -0.5rem;
+    margin-bottom: -0.4rem;
     padding: 0.1rem 0;
   }
 
   p {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: lighter;
     color: black;
   }
-  section {
-    margin-bottom: 0.6rem;
-  }
 
-  /* Additional tweaks (if needed) for a clean two-page print */
-  @page {
-    size: A4;
-    margin: 5mm;  /* updated minimal margin */
-  }
+  .cert-group-title { color: black; }
+  .cert-name { color: black; }
+  .cert-issuer, .cert-group-tag { color: #444; }
+  .cert-count { color: white; }
+
   .tech-tag {
     color: black;
-  }
-  /* Override header styles to prevent full-page expansion during printing */
-  .resume-header {
-    margin: 1rem 0 !important;  /* remove negative margins */
-    padding: 0.5rem 1rem;         /* reduce excessive padding */
-    page-break-after: avoid;     
-    break-after: avoid;
+    border-color: #bbb;
   }
 
-  /* Added rule to leave headings as is */
-  h2, h4 {
-    color: black;
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+
+  /* Override header styles to prevent full-page expansion during printing */
+  .resume-header {
+    margin: 0 0 0.6rem !important;
+    padding: 0.4rem 0.8rem;
+    page-break-after: avoid;
+    break-after: avoid;
   }
 }
 
